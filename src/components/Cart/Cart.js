@@ -7,7 +7,7 @@ import Checkout from "./Checkout";
 
 const Cart = ({ onClose }) => {
   const ORDERS_URL =
-    "https://foodorderapp-5bfd4-default-rtdb.europe-west1.firebasedatabase.app/orders.json";
+    "FIREBASE_LINK.app/orders.json";
   const [isCheckout, setIsCheckout] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
