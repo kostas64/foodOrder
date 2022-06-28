@@ -22,13 +22,15 @@ const AvailableMeals = () => {
       const responseData = await response.json();
 
       const loadedMeals = [];
+
       for (const key in responseData) {
-        loadedMeals.push({
-          id: key,
-          name: responseData[key]?.name,
-          description: responseData[key]?.description,
-          price: responseData[key]?.price,
-        });
+        !!responseData[key] &&
+          loadedMeals.push({
+            id: key,
+            name: responseData[key]?.name,
+            description: responseData[key]?.description,
+            price: responseData[key]?.price,
+          });
       }
       setMeals(loadedMeals);
       setIsLoading(false);

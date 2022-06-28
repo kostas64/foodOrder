@@ -7,14 +7,12 @@ import Checkout from "./Checkout";
 
 const Cart = ({ onClose }) => {
   const ORDERS_URL =
-    "FIREBASE_LINK.app/orders.json";
+    "https://foodorderapp-5bfd4-default-rtdb.europe-west1.firebasedatabase.app/orders.json";
   const [isCheckout, setIsCheckout] = useState();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
   const context = useContext(CartContext);
-  const totalAmount = `$${
-    context.totalAmount?.toFixed(2) || 0.0
-  }`;
+  const totalAmount = `$${context.totalAmount?.toFixed(2) || 0.0}`;
   const hasItems = context.items?.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -51,10 +49,7 @@ const Cart = ({ onClose }) => {
           name={item.name}
           amount={item.amount}
           price={item.price}
-          onRemove={cartItemRemoveHandler.bind(
-            null,
-            item.id
-          )}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
           onAdd={cartItemAddHandler.bind(null, item)}
         />
       ))}
@@ -63,17 +58,11 @@ const Cart = ({ onClose }) => {
 
   const modalActions = (
     <div className={classes.actions}>
-      <button
-        className={classes["button-alt"]}
-        onClick={onClose}
-      >
+      <button className={classes["button-alt"]} onClick={onClose}>
         Close
       </button>
       {hasItems && (
-        <button
-          className={classes.button}
-          onClick={orderHandler}
-        >
+        <button className={classes.button} onClick={orderHandler}>
           Order
         </button>
       )}
@@ -88,27 +77,19 @@ const Cart = ({ onClose }) => {
         <span>{totalAmount}</span>
       </div>
       {isCheckout && (
-        <Checkout
-          onCancel={onClose}
-          onSubmit={submitOrderHandler}
-        />
+        <Checkout onCancel={onClose} onSubmit={submitOrderHandler} />
       )}
       {!isCheckout && modalActions}
     </>
   );
 
-  const isSubmittingModalContent = (
-    <p>Sending order data...</p>
-  );
+  const isSubmittingModalContent = <p>Sending order data...</p>;
 
   const didSubmitModalContent = (
     <>
       <p>Successfully sent the order!</p>
       <div className={classes.actions}>
-        <button
-          className={classes.button}
-          onClick={onClose}
-        >
+        <button className={classes.button} onClick={onClose}>
           Close
         </button>
       </div>
