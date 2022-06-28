@@ -7,4 +7,4 @@ In order to run and check this simple app, you need to follow some steps.
 3. Start the server "npm start"
 4. Done!
 
-!(https://icedrive.net/s/51h393V2X6fDFGv2AvQywhiG8aif)
+![Main](https://icedrive.net/s/51h393V2X6fDFGv2AvQywhiG8aif)
