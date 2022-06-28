@@ -12,3 +12,8 @@ In order to run and check this simple app, you need to follow some steps.
 ![Meals](https://i.postimg.cc/5H6MHsLP/meals-Food-Order.png)
 
 ![Cart](https://i.postimg.cc/VJswwf6P/cart-Food-Order.png)
+
+
+<img src="https://icedrive.net/s/51h393V2X6fDFGv2AvQywhiG8aif"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
